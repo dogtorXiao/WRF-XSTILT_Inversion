@@ -56,7 +56,7 @@
 #=============================Running Settings====================================
 source('source.r.functions.r')
 
-xstilt_wd            = 'WRF-XSTILT-Inversion/X-STILT'
+xstilt_wd            = 'WRF-XSTILT_Inversion/X-STILT'
 key                  = readLines(file.path(xstilt_wd, 'insert_ggAPI.csv'))
 
 #=========================domain and time config==================================
@@ -90,10 +90,10 @@ ODIAC_YYYY           = c('2019', '2020', '2021')[1]                             
                                                                                 # both of them here
 tiff.path            = file.path(data_path, 'ODIAC', vname, '1km', ODIAC_YYYY)  # ODIAC data path
 
-met_path             = './wrf_arl'                                              # arl format met path
+met_path             = file.path(data_path, './wrf_arl')                        # arl format met path
 met                  = c('gdas0p5', 'gfs0p25', 'WRF')[3]
 met_res              = c(0.5, 0.25, 1/120)[3]                                   # horizontal grid spacing in degree
-met_file_format      = 'd04.%Y%m%d'
+met_file_format      = '%Y%m%d'
 
 #=============================run xstilt config==================================
 foot_res             = 1/120                                                    # output footprint spatial resolution in degree
