@@ -1,3 +1,5 @@
 [submodule "X-STILT"]
 	path = X-STILT
 	url = git@github.com:uataq/X-STILT.git
+[submodule "X-STILT/stilt"]
+	url = git@github.com:uataq/stilt.git
