@@ -16,8 +16,8 @@ B) MAIN RUN
 C) INVERSION
 The point source is very sensitive compared to area fluxes, while the SAM mode observations provides more than 1000 pixels around the point source, most of which are easy to introduce uncertainties. Therefore, select the pixels in the inversion is crucial. Here we provided 2 methods:
     
-    1. only select the pixels inside the near-time TROPOMI NO2 pulmes. Before conducting the inversion, please plot the NO2 plumes and segmentation the OCO-3 pixels, calculate the background background errors
-    2. select all the pixels in the downwind domain
+1. only select the pixels inside the near-time TROPOMI NO2 pulmes. Before conducting the inversion, please plot the NO2 plumes and segmentation the OCO-3 pixels, calculate the background background errors
+2. select all the pixels in the downwind domain
 
 DATA REQUIRED:
 1. meteorological data in arl format (eg. https://www.ready.noaa.gov/data/archives/gfs0p25/)
