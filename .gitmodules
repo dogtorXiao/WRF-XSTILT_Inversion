@@ -1,0 +1,3 @@
+[submodule "X-STILT"]
+	path = X-STILT
+	url = git@github.com:uataq/X-STILT.git
