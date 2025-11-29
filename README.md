@@ -82,7 +82,7 @@ Shared parameters setting:
    - **`run_sample_xstilt = T`**
 
 2. Calculate the time period needed to run X-STILT and the average PBL height. Determine the scaling factor for the PBL height (zisf) with any observations you have (if there is no data available, skip this step)
-   - **`run_PBL_nhrs_calc = T``**
+   - **`run_PBL_nhrs_calc = T`**
 
 ---
 
@@ -99,7 +99,7 @@ Shared parameters setting:
      - `maxagl`
 
 2. The wind error running (using the radiosonde data) (transport error)
-   - **`run_wind_main = T``**
+   - **`run_wind_main = T`**
 
 ---
 
@@ -133,7 +133,7 @@ Shared parameters setting:
 
    **Method 1**: Only select the pixels inside the near-time TROPOMI NO2 plumes. Before conducting the inversion, please plot the NO2 plumes and segment the OCO-3 pixels, calculate the background errors
 
-   **Method 2**: Select all the pixels in the downwind domain
+   **Method 2**: Select all the pixels in the downwind domain)
 
    - **`run_inversion = T`**: 
      - `inversion_recp = recp_fn`: inversion using all pixels in the X-STILT forward downwind domain
