@@ -31,7 +31,7 @@
 #'     2) run_wind_main == T, run X-STILT backward with wind error (using radiosonde
 #'     data as another set of met data)
 
-#' D.  POST DATA DEALING
+#' D.  POST DATA PROCESSING
 #'     POST_RUN == T
 #'     1) convolving the footprint from all runs (main, vertical error, wind error)
 #'     with the ODIAC emission
@@ -73,7 +73,7 @@ month                = substr(timestr,1,6)
 # observation data path,include OCO-3, TROPOMI, ODIAC, radiosonde
 data_path            = './data'
 
-oco_path             = file.path(data_path, 'OCO-3', 'irregular', month)
+oco_path             = file.path(data_path, 'OCO-3',  month)
 sensor               = 'OCO-3'                                                  # X-STILT has functions for other satellites
 sensor_gas           = 'CO2'                                                    # and other tracers, but for pp, we only use the 
                                                                                 # OCO-3 and CO2 functions here
@@ -116,7 +116,7 @@ mem_per_core         = 4.375                                                    
 # mem_per_node = n_cores * mem_per_core * 1024                                  # max mem per node now in MB 
 mem_per_node         = NULL
 
-#============================inversion parameters===============================
+#============================inversion parameters================================
 bg                   = 414.73
 bg_uncert            = 1.06                                                     # bg information, you can read from forward calc or 
                                                                                 # the TROPOMI bg calc
@@ -198,7 +198,7 @@ OCO3_obs_file               = grep(substr(timestr,3,8), list.files(oco_path, ful
 
 if (FORWARD_RUN & run_forward == F & run_bg_xstilt == F & run_seg){
 
-    forward_python_path     = "config/preparation/forward"                      # related python script path
+    forward_python_path     = "scripts/preparation/forward"                      # related python script path
 
     segmentation            = file.path(forward_python_path, 'click_segmentation.py')
     seg_arguments           = c(forward_fig_file, segmentation_file)
@@ -233,7 +233,7 @@ run_PBL_nhrs_calc           = T                                                 
 
 if (SAMPLE_RUN & run_sample_xstilt){
 
-    sample_python_path      = "config/preparation/sample"                       # related python script path
+    sample_python_path      = "scripts/preparation/sample"                       # related python script path
 
     click                   = file.path(sample_python_path, 'click.sample.py')
     click_arguments         = c(OCO3_data_file, site_lon_lat[1], site_lon_lat[2], sample_recp_fn)
@@ -263,7 +263,8 @@ if (SAMPLE_RUN & run_sample_xstilt == F & run_PBL_nhrs_calc){
 
 #=============================main run with errors==============================
 
-zisfs                       = c(0.6, 0.7)                                       # the PBLH scaling factors, including the 
+zisfs                       = c(0.6, 0.7)                                       
+                                                                                # the PBLH scaling factors, including the 
                                                                                 # standard sf and turbulent 
                                                                                 #'@NOTE a running directory can only run 
                                                                                 # one job at one time
@@ -298,7 +299,7 @@ if (MAIN_RUN & run_ver_main)
 if (MAIN_RUN & run_ver_main == F & run_wind_main)
     run_wind(namelist_MAIN_run)
 
-################################ D. POST DATA DEALING ##########################
+################################ D. POST DATA PROCESSING #######################
 
 # convert the ODIAC to nac file, convolve, merge and plot
 
