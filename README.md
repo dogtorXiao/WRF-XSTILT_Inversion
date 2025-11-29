@@ -2,6 +2,14 @@
 
 This program is created to integrate X-STILT and OCO-3 SAM observations in the Bayesian inversion to optimize the point source CO2 emissions (ex. the power plant).
 
+### Download code
+
+```bash
+git clone --recursive https://github.com/dogtorXiao/WRF-XSTILT_Inversion.git
+```
+
+---
+
 # DEMO RUN
 
 In order to run the demo_run (the main data and figures shown in the paper "High-Resolution Modeling to Quantify CO2 Emissions from Industrial Point Sources"), please set a virtual environment with R packages by:
@@ -40,14 +48,6 @@ The output figures can be found in demo_run/DataFigures/YYYYMMDD
 ## Operations
 
 **STEPS:**
-
-### Download code
-
-```bash
-git clone --recursive https://github.com/dogtorXiao/WRF-XSTILT_Inversion.git
-```
-
----
 
 ### A. SHARED CONFIGURATIONS
 
