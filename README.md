@@ -25,6 +25,9 @@ To run, in a terminal:
 ```
 cd demo_run
 Rscript xstilt_post_dealing.r
+
+cd InvResults
+Rscript plot.chart_converted.r
 ```
 
 The output figures can be found in demo_run/DataFigures/YYYYMMDD
